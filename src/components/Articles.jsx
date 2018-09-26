@@ -10,11 +10,23 @@ export default class Articles extends Component {
     };
 
     componentWillMount = () => {
-        this.getArticles();
+        this.getArticles(this.props.default);
     }
 
-    componentWillUnmount= () => {
+    componentDidUpdate = (prevProps) => {
+        if (prevProps !== this.props) {
+            this.getArticles(this.props.default);
+        }
+    }
+
+    componentWillUnmount = () => {
         this.isCancelled = true;
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps !== this.props) {
+            getData(nextProps.default);
+        }
     }
 
     formatDate(date) {
@@ -38,14 +50,18 @@ export default class Articles extends Component {
     }
 
     getArticles = () => {
-        getData().then(res => {
+        getData(this.props.default).then(res => {
             const articles = res.articles
-            console.log(articles)
+            // console.log('articles', articles) // check articles
             !this.isCancelled && this.setState({
                 articles: articles
             })
+        }).catch(err => {
+            console.log('coś poszło nie tak', err)
         })
     }
+
+
 
     render() {
         return (
@@ -54,8 +70,8 @@ export default class Articles extends Component {
                     {this.state.articles.map((news, i) => {
                         return (
                             <div className='col-lg-6' key={i}>
-                                <div className="card" style={{ width: '30rem' }}>
-                                    {news.urlToImage ? <img className='card-img-top' style={{ height: '300px' }} src={news.urlToImage} alt="No image" /> : null}
+                                <div className="card">
+                                    {news.urlToImage ? <img className='card-img-top' src={news.urlToImage} alt="Card image cap" /> : null}
                                     <div className="card-body">
                                         <h5 className='card-title'>
                                             {news.title}
@@ -68,7 +84,7 @@ export default class Articles extends Component {
                                         </h6>
                                         <p className='card-text'>{
                                             news.description
-                                            }</p>
+                                        }</p>
                                         <a href={news.url} target='_blank' className="btn btn-primary">Przejdź do artykułu</a>
                                     </div>
                                 </div>

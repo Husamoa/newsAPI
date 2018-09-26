@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Navbar from './Navbar';
-import Articles from './Articles';
+import Category from './Category';
 
 export default class App extends Component {
     render() {
         return (
-            <div>
+            <Fragment>
                 <Navbar />
-                <Articles />
-            </div>
-
+                <div className='container text-center'>
+                    <Category default='technology' />
+                </div>
+            </Fragment>
         );
     }
 }
