@@ -5,12 +5,12 @@ React APP showing news results from Poland. You can choose from 6 categories: te
 
 
 ## Used technologies
-> - React
-> - ES6
-> - Bootstrap 4
-> - Sass
-> - Node.js client library
-> - Webpack
+- React
+- ES6
+- Bootstrap 4
+- Sass
+- Node.js client library
+- Webpack
 
 ## Demo
 ![](newsapipl.gif)
