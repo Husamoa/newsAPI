@@ -30,15 +30,15 @@ export default class Category extends Component {
             <Fragment>
                 <div className="input-group mb-3">
                     <div className="input-group-prepend">
-                        <label className="input-group-text">Select category</label>
+                        <label className="input-group-text">Wybierz kategorię</label>
                     </div>
                     <select value={this.state.value} onChange={this.handleChange} className="custom-select" id="inputGroupSelect01">
-                        <option value='technology'>Technology</option>
-                        <option value='business'>Business</option>
-                        <option value='entertainment'>Entertainment</option>
-                        <option value='health'>Health</option>
-                        <option value='science'>Science</option>
-                        <option value='sports'>Sports</option>
+                        <option value='technology'>Technologia</option>
+                        <option value='business'>Biznes</option>
+                        <option value='entertainment'>Rozrywka</option>
+                        <option value='health'>Zdrowie</option>
+                        <option value='science'>Nauka</option>
+                        <option value='sports'>Sport</option>
                     </select>
                 </div>
                 <Articles default={this.state.value} />

@@ -71,21 +71,23 @@ export default class Articles extends Component {
                         return (
                             <div className='col-lg-6' key={i}>
                                 <div className="card">
-                                    {news.urlToImage ? <img className='card-img-top' src={news.urlToImage} alt="Card image cap" /> : null}
-                                    <div className="card-body">
-                                        <h5 className='card-title'>
-                                            {news.title}
-                                        </h5>
-                                        <h6 className="card-subtitle mb-2 text-muted">
-                                            <p>
-                                                <i>{news.author ? news.author : this.props.default}</i>
-                                            </p>
-                                            <p>{this.formatDate(news.publishedAt)}</p>
-                                        </h6>
-                                        <p className='card-text'>{
-                                            news.description
-                                        }</p>
-                                        <a href={news.url} target='_blank' className="btn btn-primary">Przejdź do artykułu</a>
+                                    <div>
+                                        {news.urlToImage ? <img className='card-img-top' src={news.urlToImage} alt="No image" /> : null}
+                                        <div className="card-body">
+                                            <h5 className='card-title'>
+                                                {news.title}
+                                            </h5>
+                                            <h6 className="card-subtitle mb-2 text-muted">
+                                                <p>
+                                                    <i>{news.author ? news.author : this.props.default}</i>
+                                                </p>
+                                                <p>{this.formatDate(news.publishedAt)}</p>
+                                            </h6>
+                                            <p className='card-text'>{
+                                                news.description
+                                            }</p>
+                                            <a href={news.url} target='_blank' className="btn btn-primary">Przejdź do artykułu</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

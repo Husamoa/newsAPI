@@ -1,5 +1,11 @@
 // TODO: Card style (if needed)
 
 .card {
+    display: flex;
     margin-bottom: 15px;
+    min-height: 700px;
+    justify-content: center;
+    img {
+        max-height: 20rem;
+    }
 }
