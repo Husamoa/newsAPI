@@ -1,7 +1,7 @@
 # News API using React
 React APP showing news results from Poland. You can choose from 6 categories: technology, business, entertainment, health, science and sports. Uses data from News API and it's responsive thanks to Bootstrap.
 
-[Przejdź do aplikacji](https://husamoa.github.io/newsAPI/)
+[Launch App](https://husamoa.github.io/newsAPI/)
 
 
 ## Used technologies
