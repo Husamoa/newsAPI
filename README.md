@@ -16,7 +16,7 @@ React APP showing news results from Poland. You can choose from 6 categories: te
 ![](newsapipl.gif)
 
 ## Usage
-Fork or download this repositorium, move inside and run:
+Fork or download this repository, move inside and run:
 
 ```
 npm install
